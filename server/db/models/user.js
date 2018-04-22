@@ -16,6 +16,20 @@ const User = db.define('user', {
       return () => this.getDataValue('password')
     }
   },
+  // only Admins can activate users who register.
+  isAdmin: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false,
+    // when bongo and i sign up, default value will be true. after that, default will be false.
+    allowNull: false
+  },
+  // only verified users can post articles.
+  isVerified: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false,
+    // when bongo and i sign up, default value will be true. after that, default will be false.
+    allowNull: false
+  },
   salt: {
     type: Sequelize.STRING,
     // Making `.salt` act like a function hides it when serializing to JSON.
