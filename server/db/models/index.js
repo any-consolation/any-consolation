@@ -1,4 +1,11 @@
 const User = require('./user')
+const Article = require('./article')
+const Tag = require('./tag')
+
+Article.belongsToMany(User)
+User.belongsToMany(Article)
+Article.belongsToMany(Tag)
+Tag.belongsToMany(Article)
 
 /**
  * If we had any associations to make, this would be a great place to put them!
@@ -14,5 +21,7 @@ const User = require('./user')
  * instead of: const User = require('../db/models/user')
  */
 module.exports = {
-  User
+  User,
+  Article,
+  Tag
 }
