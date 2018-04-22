@@ -10,21 +10,42 @@
  * Now that you've got the main idea, check it out in practice below!
  */
 const db = require('../server/db')
-const {User} = require('../server/db/models')
+const { User, Article } = require('../server/db/models')
 
-async function seed () {
-  await db.sync({force: true})
+async function seed() {
+  await db.sync({ force: true })
   console.log('db synced!')
   // Whoa! Because we `await` the promise that db.sync returns, the next line will not be
   // executed until that promise resolves!
 
   const users = await Promise.all([
-    User.create({email: 'cody@email.com', password: '123'}),
-    User.create({email: 'murphy@email.com', password: '123'})
+    User.create({ email: 'bongo@email.com', name: 'bongo', isVerified: true, isAdmin: true, password: '123' }),
+    User.create({ email: 'autarch@email.com', name: 'autarch', isVerified: true, isAdmin: false, password: '123'})
   ])
-  // Wowzers! We can even `await` on the right-hand side of the assignment operator
-  // and store the result that the promise resolves to in a variable! This is nice!
-  console.log(`seeded ${users.length} users`)
+
+  const articles = await Promise.all([
+    Article.create({
+      title: 'Hoot Rips',
+      tagLine: 'This shit rips',
+      content: 'have you heard about hoot? it owns',
+      isAnonymous: false,
+      isPublished: true,
+      userId: 1
+    }),
+    Article.create({
+      title: 'the new DJ boring Album',
+      tagLine: 'this is so good',
+      content: 'I\'m listening to it right now and it is some of the sickest shit I\'ve ever heard. no fake.',
+      isAnonymous: false,
+      isPublished: true,
+      userId: 2
+    })
+  ])
+
+    // Wowzers! We can even `await` on the right-hand side of the assignment operator
+    // and store the result that the promise resolves to in a variable! This is nice!
+    console.log(`seeded ${users.length} users`)
+    console.log(`seeded ${articles.length} articles`)
   console.log(`seeded successfully`)
 }
 

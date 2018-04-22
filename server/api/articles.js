@@ -1,11 +1,12 @@
 const router = require('express').Router()
 const { Article } = require('../db/models')
 
-router.get('/', (req, res, next) => {
-  Article.findAll({
+router.get('/', async (req, res, next) => {
+  const articles = await Article.findAll({
     attributes: ['id', 'title', 'tagLine'],
-    include: ['author']
+    include: ['user']
   })
+  res.json({ articles })
 })
 
 module.exports = router
