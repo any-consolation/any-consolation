@@ -2,8 +2,8 @@ const User = require('./user')
 const Article = require('./article')
 const Tag = require('./tag')
 
-Article.belongsToMany(User, { through: 'ArticleUser' })
-User.belongsToMany(Article, { through: 'ArticleUser' })
+Article.belongsTo(User)
+User.hasMany(Article)
 Article.belongsToMany(Tag, { through: 'ArticleTag' })
 Tag.belongsToMany(Article, { through: 'ArticleTag' })
 

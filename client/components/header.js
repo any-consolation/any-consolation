@@ -1,10 +1,10 @@
-import { React, Component } from 'react'
+import React, { Component } from 'react'
 
-const Header = () => {
+const Header = props => {
 
   return (
     <div>
-      {/* HEADER/LOGO GOES HERE */}
+      <h1>HEADER GOES HERE I GUESS</h1>
     </div>
   )
 }
