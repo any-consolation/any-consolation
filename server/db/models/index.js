@@ -2,10 +2,10 @@ const User = require('./user')
 const Article = require('./article')
 const Tag = require('./tag')
 
-Article.belongsToMany(User)
-User.belongsToMany(Article)
-Article.belongsToMany(Tag)
-Tag.belongsToMany(Article)
+Article.belongsToMany(User, { through: 'ArticleUser' })
+User.belongsToMany(Article, { through: 'ArticleUser' })
+Article.belongsToMany(Tag, { through: 'ArticleTag' })
+Tag.belongsToMany(Article, { through: 'ArticleTag' })
 
 /**
  * If we had any associations to make, this would be a great place to put them!
