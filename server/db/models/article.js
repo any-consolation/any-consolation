@@ -24,7 +24,8 @@ const Article = db.define('article', {
   },
   url: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: false,
+    unique: true
   }
 })
 

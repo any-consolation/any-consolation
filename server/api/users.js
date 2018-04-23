@@ -12,3 +12,15 @@ router.get('/', (req, res, next) => {
     .then(users => res.json(users))
     .catch(next)
 })
+
+router.get('/:id', async (req, res, next) => {
+  try {
+    const user = await User.findById(req.params.id, {
+      attributes: ['id', 'email','name', 'isVerified', 'isAdmin']
+    })
+    res.json(user)
+  }
+  catch(err) {
+    next(err)
+  }
+})
