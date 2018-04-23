@@ -21,7 +21,15 @@ const Article = db.define('article', {
     // depends on how much control bongo and I want over the website
     type: Sequelize.BOOLEAN,
     defaultValue: false
+  },
+  url: {
+    type: Sequelize.STRING,
+    allowNull: false
   }
+})
+
+Article.beforeValidate((instance) => {
+  instance.url = instance.title.replace(/\s/g,'-').toLowerCase()
 })
 
 module.exports = Article
