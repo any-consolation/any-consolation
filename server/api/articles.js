@@ -7,10 +7,18 @@ router.get('/:title', async (req, res, next) => {
       where: {
         url: req.params.title
       },
-      attributes: ['id', 'title', 'tagLine', 'url', 'content'],
+      // attributes: ['id', 'title', 'tagLine', 'url', 'content'],
       include: ['user']
     })
-    res.json(article)
+    const { id, title, tagLine, url, content, isAnonymous, isPublished, user } = article
+    if (!isPublished) {
+      res.sendStatus(404)
+    } else if (isAnonymous) {
+      res.json({ id, title, tagLine, url, content, isAnonymous })
+    } else {
+      const author = user.name
+      res.json({ id, title, tagLine, url, content, isAnonymous, author })
+    }
   }
   catch (err) {
     next(err)

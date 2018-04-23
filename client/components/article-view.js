@@ -17,7 +17,7 @@ class ArticleView extends Component {
     return (
       <div>
         <h1>hello there</h1>
-        <h4>{this.props.article && this.props.article.title}</h4>
+        <h4>{this.props.article && this.props.article.title} by {this.props.article && (this.props.article.isAnonymous ? "anonymous" : this.props.article.author)}</h4>
         <p>{this.props.article && this.props.article.content}</p>
       </div>
     )
