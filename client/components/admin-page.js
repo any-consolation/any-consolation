@@ -11,8 +11,8 @@ class AdminPage extends Component {
     return (
       <div>
         {this.props.user && this.props.user.isAdmin ?
-          <div> </div> :
-          <h2>"you are not logged in as an admin"</h2>}
+          <h2>You are logged in as an Admin</h2> :
+          <h2>You are not logged in as an Admin</h2>}
       </div>
     )
 
