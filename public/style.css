@@ -10,6 +10,13 @@ label {
   display: block;
 }
 
+nav {
+  position: absolute;
+  bottom: 0px;
+  display: flex;
+  flex-direction: row;
+}
+
 nav a {
   display: inline-block;
   margin: 1em;
