@@ -30,7 +30,7 @@ const Article = db.define('article', {
 })
 
 Article.beforeValidate((instance) => {
-  instance.url = instance.title.replace(/\s/g,'-').toLowerCase()
+  instance.url = instance.title.replace(/\s/g, '-').toLowerCase()
 })
 
 module.exports = Article
