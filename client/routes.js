@@ -22,6 +22,7 @@ class Routes extends Component {
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/articles" component={ArticleView} />
+        <Route path="/admin" component={AdminPage} />
         {
           isLoggedIn &&
           <Switch>
@@ -31,7 +32,6 @@ class Routes extends Component {
         }
         {/* Displays our Login component as a fallback */}
         {/* <Route component={Login} /> */}
-        <Route path="/admin" component={AdminPage} />
       </Switch>
     )
   }

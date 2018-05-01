@@ -27,7 +27,7 @@ const Navbar = ({ handleClick, isLoggedIn, isAdmin }) => (
         </div>
       )}
       <div>
-        <h6>are they admin? {isAdmin ? "yes" : "no"}</h6>
+        <h6>are they admin? {isAdmin ? 'yes' : 'no'}</h6>
       </div>
     </nav>
     <hr />
