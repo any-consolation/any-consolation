@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
+import { NavLink, Link } from 'react-router-dom'
 
-class ArticleCard extends Component {
-  constructor() {
-    super()
-  }
+const ArticleCard = (props) => {
 
-  render() {
-    return (
-      <div>
-        <h3>{this.props.title}</h3>
-        <h4>{this.props.tagLine}</h4>
-      </div>
-    )
-  }
+  return (
+    <div>
+      <Link to={`/articles/${props.url}`}>
+        <h3>{props.title}</h3>
+        <h4>{props.tagLine}</h4>
+        <h5>by {props.author}</h5>
+      </Link>
+    </div>
+  )
 }
+
+export default ArticleCard

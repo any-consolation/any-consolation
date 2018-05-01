@@ -1,42 +1,15 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { getAdminUserListThunk } from '../store'
+import AdminUserList from './admin-user-list'
+import AdminArticleList from './admin-article-list'
 
-class AdminPage extends Component {
-  constructor() {
-    super()
-  }
+const AdminPage = () => {
 
-  componentDidMount() {
-    this.props.getAdminUserList()
-  }
-
-  render() {
-
-    return (
-      <div>
-        <h2>User List</h2>
-        {this.props.user && this.props.user.isAdmin && this.props.adminUserList && this.props.adminUserList.map(x => (
-          <div key={x.id}>
-            <h2>email: {x.email}, id: {x.id}</h2>
-          </div>
-        ))}
-      </div>
-    )
-
-  }
-
+  return (
+    <div>
+      <AdminUserList />
+      <AdminArticleList />a
+    </div>
+  )
 }
 
-const mapState = state => ({
-  user: state.user,
-  adminUserList: state.adminUserList
-})
-
-const mapDispatch = dispatch => ({
-  getAdminUserList() {
-    dispatch(getAdminUserListThunk())
-  }
-})
-
-export default connect(mapState, mapDispatch)(AdminPage)
+export default AdminPage
