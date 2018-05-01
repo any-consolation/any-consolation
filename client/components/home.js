@@ -17,7 +17,7 @@ class Home extends Component {
       <div>
         {this.props.articleList && this.props.articleList.length && this.props.articleList.map(x => (
           <div>
-            <ArticleCard title={x.title} tagLine={x.tagLine} url={x.url} />
+            <ArticleCard title={x.title} tagLine={x.tagLine} url={x.url} author={x.user.name} />
           </div>
         ))}
       </div>

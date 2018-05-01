@@ -6,7 +6,11 @@ const ArticleCard = (props) => {
 
   return (
     <div>
-      <Link to={`/articles/${props.url}`}>{props.title}</Link>
+      <Link to={`/articles/${props.url}`}>
+        <h3>{props.title}</h3>
+        <h4>{props.tagLine}</h4>
+        <h5>by {props.author}</h5>
+      </Link>
     </div>
   )
 }
