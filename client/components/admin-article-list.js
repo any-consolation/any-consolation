@@ -16,7 +16,7 @@ class AdminArticleList extends Component {
     return (
       <div>
         <h2>Article List</h2>
-        {this.props.user && this.props.user.isAdmin && this.props.adminArticleList && this.props.adminArticleList.map(x => (
+        {this.props.user && this.props.user.isAdmin && this.props.articleList && this.props.articleList.map(x => (
           <div key={x.id}>
             <h2>title: {x.title}</h2>
           </div>
@@ -30,7 +30,7 @@ class AdminArticleList extends Component {
 
 const mapState = state => ({
   user: state.user,
-  adminArticleList: state.adminArticleList
+  articleList: state.articleList
 })
 
 const mapDispatch = dispatch => ({

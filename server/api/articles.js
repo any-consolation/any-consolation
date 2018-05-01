@@ -4,6 +4,7 @@ const { Article } = require('../db/models')
 router.get('/admin', async (req, res, next) => {
   try {
     const articleList = await Article.findAll()
+    console.log('total articles: ' + articleList.length)
     res.json(articleList)
   }
   catch (err) {
@@ -41,7 +42,7 @@ router.get('/', async (req, res, next) => {
       attributes: ['id', 'title', 'tagLine', 'url'],
       include: ['user']
     })
-    res.json({ articles })
+    res.json(articles)
   }
   catch (err) {
     next(err)
