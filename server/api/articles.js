@@ -1,6 +1,16 @@
 const router = require('express').Router()
 const { Article } = require('../db/models')
 
+router.get('/admin', async (req, res, next) => {
+  try {
+    const articleList = await Article.findAll()
+    res.json(articleList)
+  }
+  catch (err) {
+    next(err)
+  }
+})
+
 router.get('/:title', async (req, res, next) => {
   try {
     const article = await Article.find({
