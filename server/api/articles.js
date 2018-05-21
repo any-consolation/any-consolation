@@ -3,9 +3,27 @@ const { Article } = require('../db/models')
 
 router.get('/admin', async (req, res, next) => {
   try {
-    const articleList = await Article.findAll()
+    const articleList = await Article.findAll({
+      include: ['user']
+    })
     console.log('total articles: ' + articleList.length)
     res.json(articleList)
+  }
+  catch (err) {
+    next(err)
+  }
+})
+
+router.get('/publish', async (req, res, next) => {
+  try {
+    // console.log(req)
+    let article = await Article.findById(req.query.articleId)
+    article = await article.update({
+      isPublished: req.query.publish
+    }, {
+      include: ['user']
+    })
+    res.json({ article })
   }
   catch (err) {
     next(err)
@@ -38,7 +56,9 @@ router.get('/:title', async (req, res, next) => {
 
 router.get('/', async (req, res, next) => {
   try {
-    const articles = await Article.findAll({
+    const articles = await Article.findAll(
+    {
+      where: { isPublished: true },
       attributes: ['id', 'title', 'tagLine', 'url'],
       include: ['user']
     })

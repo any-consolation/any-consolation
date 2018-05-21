@@ -7,7 +7,7 @@ const AdminPage = () => {
   return (
     <div>
       <AdminUserList />
-      <AdminArticleList />a
+      <AdminArticleList />
     </div>
   )
 }
