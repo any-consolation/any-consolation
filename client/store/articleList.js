@@ -6,6 +6,7 @@ import history from '../history'
  */
 const GET_ARTICLELIST = 'GET_ARTICLELIST'
 const REMOVE_ARTICLELIST = 'REMOVE_ARTICLELIST'
+const PUBLISH_ARTICLE = 'PUBLISH_ARTICLE'
 
 /**
  * INITIAL STATE
@@ -17,6 +18,7 @@ const defaultArticleList = []
  */
 const getArticleList = articleList => ({ type: GET_ARTICLELIST, articleList })
 const removeArticleList = () => ({ type: REMOVE_ARTICLELIST })
+const publishArticle = article => ({ type: PUBLISH_ARTICLE, article })
 
 /**
  * THUNK CREATORS
@@ -39,6 +41,18 @@ export const getAdminArticleListThunk = () => dispatch => {
     })
 }
 
+export const adminPublishArticleThunk = (article, publish) => dispatch => {
+  axios.get(`/api/articles/publish?articleId=${article.id}&publish=${publish}`, { article, publish })
+    .then(res => res.data)
+    .then(article => {
+      axios.get(`/api/articles/admin`)
+      .then(res => res.data)
+      .then(articleList => {
+        articleList = articleList.sort((a, b) => a.id - b.id)
+        dispatch(getArticleList(articleList))
+      })
+    })
+}
 
 /**
  * REDUCER
@@ -50,6 +64,8 @@ export default function (state = defaultArticleList, action) {
       return action.articleList
     case REMOVE_ARTICLELIST:
       return defaultArticleList
+    case PUBLISH_ARTICLE:
+      return state.map(x => x.id === action.article.id ? action.article : x)
     default:
       return state
   }

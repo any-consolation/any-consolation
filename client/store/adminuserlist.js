@@ -27,6 +27,7 @@ export const getAdminUserListThunk = () => dispatch => {
   axios.get(`/api/users`)
     .then(res => res.data)
     .then(adminUserList => {
+      adminUserList = adminUserList.sort((a, b) => a.id - b.id)
       dispatch(getUserList(adminUserList))
     })
 }
