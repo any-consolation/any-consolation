@@ -65,7 +65,7 @@ export default function (state = defaultArticleList, action) {
     case REMOVE_ARTICLELIST:
       return defaultArticleList
     case PUBLISH_ARTICLE:
-      return state.map(x => x.id === action.article.id ? action.article : x)
+      return state.map(x => (x.id === action.article.id ? action.article : x))
     default:
       return state
   }

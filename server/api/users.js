@@ -7,7 +7,7 @@ router.get('/', (req, res, next) => {
     // explicitly select only the id and email fields - even though
     // users' passwords are encrypted, it won't help if we just
     // send everything to anyone who asks!
-    attributes: ['id', 'name', 'email', 'isVerified', 'createdAt']
+    attributes: ['id', 'name', 'email', 'isVerified', 'createdAt', 'isAdmin']
   })
     .then(users => res.json(users))
     .catch(next)

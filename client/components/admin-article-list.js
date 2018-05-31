@@ -31,12 +31,12 @@ class AdminArticleList extends Component {
                 <td>{x.title}</td>
                 <td>{x.user.name}</td>
                 <td>{x.createdAt}</td>
-                <td><button onClick={() => {
+                <td>{x.isAdmin && <button onClick={() => {
                   const publish = !x.isPublished
                   this.props.publishArticle(x, publish)
                   // x.isPublished = !x.isPublished
                 }
-                }>{x.isPublished ? "Unpublish" : "Publish"}</button></td>
+                }>{x.isPublished ? "Unpublish" : "Publish"}</button>}</td>
               </tr>
             ))}
           </tbody>

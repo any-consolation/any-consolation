@@ -31,12 +31,12 @@ class AdminUserList extends Component {
                 <td>{x.email}</td>
                 <td>{x.name}</td>
                 <td>{x.createdAt}</td>
-                <td><button onClick={() => {
+                <td>{!x.isAdmin && <button onClick={() => {
                   const verify = !x.isVerified
                   this.props.verifyUser(x, verify)
                   // x.isPublished = !x.isPublished
                 }
-                }>{x.isVerified ? "Unverify" : "Verify"}</button></td>
+                }>{x.isVerified ? 'Unverify' : 'Verify'}</button>}</td>
               </tr>
             ))}
           </tbody>
