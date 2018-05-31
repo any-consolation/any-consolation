@@ -46,11 +46,11 @@ export const adminPublishArticleThunk = (article, publish) => dispatch => {
     .then(res => res.data)
     .then(article => {
       axios.get(`/api/articles/admin`)
-      .then(res => res.data)
-      .then(articleList => {
-        articleList = articleList.sort((a, b) => a.id - b.id)
-        dispatch(getArticleList(articleList))
-      })
+        .then(res => res.data)
+        .then(articleList => {
+          articleList = articleList.sort((a, b) => a.id - b.id)
+          dispatch(getArticleList(articleList))
+        })
     })
 }
 
