@@ -6,7 +6,6 @@ import {logout} from '../store'
 
 const Navbar = ({ handleClick, isLoggedIn, isAdmin }) => (
   <div>
-    <h1>any-consolation</h1>
     <nav>
       <div>
         <h6>writers: </h6>

@@ -4,7 +4,7 @@ const Header = props => {
 
   return (
     <div>
-      <h1>HEADER GOES HERE I GUESS</h1>
+      <h1>ANY CONSOLATION</h1>
     </div>
   )
 }
