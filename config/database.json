@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "mikekanter",
+    "password": null,
+    "database": "any-consolation",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "mikekanter",
+    "password": null,
+    "database": "any-consolation-test",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "mikekanter",
+    "password": null,
+    "database": "any-consolation",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
