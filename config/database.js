@@ -1,20 +1,20 @@
-{
+module.exports = {
   "development": {
-    "username": "mikekanter",
+    "username": process.env.USER,
     "password": null,
     "database": "any-consolation",
     "host": "localhost",
     "dialect": "postgres"
   },
   "test": {
-    "username": "mikekanter",
+    "username": process.env.USER,
     "password": null,
     "database": "any-consolation-test",
     "host": "localhost",
     "dialect": "postgres"
   },
   "production": {
-    "username": "mikekanter",
+    "username": process.env.USER,
     "password": null,
     "database": "any-consolation",
     "host": "localhost",
