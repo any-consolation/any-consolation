@@ -26,6 +26,10 @@ const Article = db.define('article', {
     type: Sequelize.STRING,
     allowNull: false,
     unique: true
+  },
+  editText: {
+    type: Sequelize.TEXT,
+    defaultValue: null
   }
 })
 
