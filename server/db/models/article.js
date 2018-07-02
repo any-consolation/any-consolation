@@ -30,6 +30,10 @@ const Article = db.define('article', {
   editText: {
     type: Sequelize.TEXT,
     defaultValue: null
+  },
+  pendingEdit: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false
   }
 })
 
