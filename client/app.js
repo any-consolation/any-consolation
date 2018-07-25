@@ -7,10 +7,10 @@ import Routes from './routes'
 
 const App = () => {
   return (
-    <div>
+    <div className="app">
       <Header />
-      <Navbar />
       <Routes />
+      <Navbar />
     </div>
   )
 }

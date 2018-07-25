@@ -76,10 +76,10 @@ class ArticleView extends Component {
     let parsedContentArray = this.bbCodeParser()
 
     return (
-      <div>
-        <h1>hello there</h1>
-        <h4>{this.props.article && this.props.article.title} by {this.props.article && (this.props.article.isAnonymous ? 'anonymous' : this.props.article.author)}</h4>
-        <ParsedArticle parsedContentArray={parsedContentArray} />
+      <div className="articleView">
+        <h1>{this.props.article && this.props.article.title}</h1>
+        <h4>by {this.props.article && (this.props.article.isAnonymous ? 'anonymous' : this.props.article.author)}</h4>
+        <ParsedArticle className="parsedArticle" parsedContentArray={parsedContentArray} />
       </div>
     )
   }

@@ -1,17 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
-import {logout} from '../store'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { logout } from '../store'
 
 const Navbar = ({ handleClick, isLoggedIn, isAdmin }) => (
-  <div>
+  <div className="bottomnav" >
+    <hr />
     <nav>
       <div>
         <h6>writers: </h6>
       </div>
       {isLoggedIn ? (
-        <div>
+        <div className="bottomMenu">
           {/* The navbar will show these links after you log in */}
           <Link to="/">Home</Link>
           <a href="#" onClick={handleClick}>
@@ -19,17 +20,18 @@ const Navbar = ({ handleClick, isLoggedIn, isAdmin }) => (
           </a>
         </div>
       ) : (
-        <div>
-          {/* The navbar will show these links before you log in */}
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
+          <div className="bottomMenu">
+            {/* The navbar will show these links before you log in */}
+            <Link to="/login">Login</Link>
+            <Link to="/signup">Sign Up</Link>
+          </div>
+        )}
+      {
+        isAdmin && <div className="bottomMenu">
+          <Link to="/admin">Admin Page</Link>
         </div>
-      )}
-      <div>
-        {isAdmin && <Link to="/admin">Admin Page</Link>}
-      </div>
+      }
     </nav>
-    <hr />
   </div>
 )
 
