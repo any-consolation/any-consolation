@@ -1,5 +1,14 @@
+:root {
+  --navbar-height: 50px;
+}
+
 body {
   font-family: sans-serif;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -10,8 +19,13 @@ label {
   display: block;
 }
 
+.bottomnav {
+  bottom: 0px;
+  flex-direction: row;
+}
+
+
 nav {
-  position: absolute;
   bottom: 0px;
   display: flex;
   flex-direction: row;
@@ -35,10 +49,30 @@ tr:hover {
   background-color: lightgray;
 }
 
+.image {
+  max-height: 300px;
+  resize: both;
+  overflow: auto;
+}
+
 .floatLeft {
-  float: left
+  float: left;
 }
 
 .floatRight {
-  float: right
+  float: right;
+}
+
+.articleView {
+  height: 100%;
+  overflow: auto;
+}
+
+.parsedArticle {
+  object-fit: contain;
+  overflow: auto;
+}
+
+h1 {
+  text-decoration-color: none;
 }

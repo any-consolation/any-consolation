@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 const Header = props => {
 
   return (
-    <div>
-      <h1>ANY CONSOLATION</h1>
-    </div>
+    <Link to="/">
+      <div>
+        <h1>ANY CONSOLATION</h1>
+      </div>
+    </Link>
   )
 }
 
