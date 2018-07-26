@@ -12,7 +12,7 @@ const Navbar = ({ handleClick, isLoggedIn, isAdmin }) => (
         <h6>writers: </h6>
       </div>
       {isLoggedIn ? (
-        <div className="bottomMenu">
+        <div>
           {/* The navbar will show these links after you log in */}
           <Link to="/userHome" className="clickable-text">My Articles</Link>
           <a href="#" className="clickable-text" onClick={handleClick}>
@@ -22,10 +22,10 @@ const Navbar = ({ handleClick, isLoggedIn, isAdmin }) => (
             <Link to="/admin" className="clickable-text">Admin Page</Link>}
         </div>
       ) : (
-          <div className="bottomMenu clickable-text">
+          <div>
             {/* The navbar will show these links before you log in */}
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Sign Up</Link>
+            <Link to="/login" className="clickable-text">Login</Link>
+            <Link to="/signup" className="clickable-text">Sign Up</Link>
           </div>
         )}
     </nav>

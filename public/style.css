@@ -5,6 +5,7 @@
   --text-hovor-color: royalblue;
   --logo-color: black;
   --logo-background-hovor-color: lightblue;
+  --decoration-color: lightcoral;
 }
 
 .clickable-text {
@@ -13,7 +14,7 @@
 
 .clickable-text:hover {
   text-decoration-line: underline;
-  text-decoration-color: var(--text-hovor-color);
+  text-decoration-color: var(--decoration-color);
   color: var(--text-hovor-color);
 }
 
@@ -35,7 +36,7 @@ button:hover {
 }
 
 button:active:hover {
-  background-color: lightcoral;
+  background-color: var(--decoration-color);
 }
 
 .app {
@@ -108,12 +109,20 @@ tr:hover {
 
 .logo {
   border: 1em solid transparent;
-  width: min-content;
+  width: -moz-min-content;
+  width: -webkit-min-content;
   white-space: nowrap;
-  color: var(--logo-color)
+  color: var(--logo-color);
+  outline: 2px solid transparent;
 }
 
 .logo:hover {
   background: var(--logo-background-hovor-color);
-  border: 1em solid var(--text-hovor-color);
+  border: 1em solid var(--decoration-color);
+  outline: 2px solid var(--text-hovor-color);
+} 
+
+input {
+  outline: 0 !important;
+  border: 1px var(--text-hovor-color);
 }
