@@ -1,6 +1,8 @@
 const router = require('express').Router()
 const { Article } = require('../db/models')
 
+// get a list of all articles, regardless of status, (for admin page):
+
 router.get('/admin', async (req, res, next) => {
   try {
     const articleList = await Article.findAll({
@@ -13,6 +15,9 @@ router.get('/admin', async (req, res, next) => {
     next(err)
   }
 })
+
+
+// To publish an article (as Admin):
 
 router.get('/publish', async (req, res, next) => {
   try {
@@ -29,6 +34,9 @@ router.get('/publish', async (req, res, next) => {
     next(err)
   }
 })
+
+
+// Get an individual article (to read):
 
 router.get('/:title', async (req, res, next) => {
   try {
@@ -53,6 +61,9 @@ router.get('/:title', async (req, res, next) => {
     next(err)
   }
 })
+
+
+// get all published articles (for home page):
 
 router.get('/', async (req, res, next) => {
   try {
