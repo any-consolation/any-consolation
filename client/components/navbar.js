@@ -14,23 +14,20 @@ const Navbar = ({ handleClick, isLoggedIn, isAdmin }) => (
       {isLoggedIn ? (
         <div className="bottomMenu">
           {/* The navbar will show these links after you log in */}
-          <Link to="/">Home</Link>
-          <a href="#" onClick={handleClick}>
+          <Link to="/userHome" className="text">My Articles</Link>
+          <a href="#" className="text" onClick={handleClick}>
             Logout
           </a>
+          {isAdmin &&
+            <Link to="/admin" className="text">Admin Page</Link>}
         </div>
       ) : (
-          <div className="bottomMenu">
+          <div className="bottomMenu text">
             {/* The navbar will show these links before you log in */}
             <Link to="/login">Login</Link>
             <Link to="/signup">Sign Up</Link>
           </div>
         )}
-      {
-        isAdmin && <div className="bottomMenu">
-          <Link to="/admin">Admin Page</Link>
-        </div>
-      }
     </nav>
   </div>
 )
