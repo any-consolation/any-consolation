@@ -9,8 +9,17 @@ export const UserHome = (props) => {
   const { email } = props
 
   return (
-    <div>
-      <h2>any-consolation</h2>
+    <div className="text">
+      <h2>any-consolation User Portal</h2>
+      <div>
+        <h3>we need a table of our own articles here</h3>
+      </div>
+      <div>
+        <button>maybe a button to go to the new article input form</button>
+      </div>
+      <div>
+        <h3>we need to be able to enter a new article here</h3>
+      </div>
     </div>
   )
 }

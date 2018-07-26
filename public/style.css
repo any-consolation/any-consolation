@@ -1,9 +1,23 @@
 :root {
   --navbar-height: 50px;
+  --background-color: rgb(245,245,245);
+  --text-color: black;
+  --text-hovor-color: royalblue;
+  --logo-color: black;
+}
+
+.text {
+  color: var(--text-color);
+}
+
+.text:hover {
+  color: var(--text-hovor-color);
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: var(--background-color);
+  color: var(--text-color)
 }
 
 .app {
@@ -73,6 +87,14 @@ tr:hover {
   overflow: auto;
 }
 
-h1 {
-  text-decoration-color: none;
+.logo {
+  border: 1em solid transparent;
+  width: min-content;
+  white-space: nowrap;
+  color: var(--logo-color)
+}
+
+.logo:hover {
+  background: lightblue;
+  border: 1em solid var(--text-hovor-color);
 }
