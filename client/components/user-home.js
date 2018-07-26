@@ -9,8 +9,9 @@ export const UserHome = (props) => {
   const { email } = props
 
   return (
-    <div className="text">
+    <div>
       <h2>any-consolation User Portal</h2>
+      <h3>Your email: {props.email}</h3>
       <div>
         <h3>we need a table of our own articles here</h3>
       </div>
