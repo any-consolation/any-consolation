@@ -191,4 +191,4 @@ th {
 
 .myCheckbox input:checked + span {
   color: var(--text-hovor-color);
-}
+  }
