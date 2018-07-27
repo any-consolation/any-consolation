@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import ArticleForm from './article-form'
 
 /**
  * COMPONENT
@@ -20,6 +21,7 @@ export const UserHome = (props) => {
       </div>
       <div>
         <h3>we need to be able to enter a new article here</h3>
+        <ArticleForm />
       </div>
     </div>
   )
