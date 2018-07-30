@@ -11,7 +11,7 @@ const ArticleForm = props => (
 
         <div>
             <label htmlFor="content" >Article Text</label>
-            <textarea className="formInput" form ="articleInputForm" name="content" required={true} id="content" placeHolder="Article text goes here..." cols="70" rows="10" wrap="soft" />
+            <textarea className="formInput articleFormTextarea" form="articleInputForm" name="content" required={true} id="content" placeHolder="Article text goes here..." wrap="soft" />
             {/* <input type="textarea" required={true} size="large" name="content" className="articleInput" placeholder="Article Text" defaultValue={props.article ? props.article.content : ''} /> */}
         </div>
         <div className="checkboxdiv">
