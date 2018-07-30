@@ -192,3 +192,16 @@ th {
 .myCheckbox input:checked + span {
   color: var(--text-hovor-color);
   }
+
+.articleFormTextarea {
+
+  width: 90%;
+  height: 15em;
+
+}
+
+@media only screen and (max-width: 500px) {
+  .articleFormTextarea {
+    width: 100%;
+  }
+}

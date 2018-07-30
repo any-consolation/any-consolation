@@ -24,7 +24,9 @@ class UserHome extends Component {
     return (
       <div>
         <h2>any-consolation User Portal</h2>
+        <br />
         <h3>Your email: {this.props.email}</h3>
+        <br />
         <div>
           <h3>Your Articles:</h3>
           <table>
