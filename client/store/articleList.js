@@ -7,6 +7,7 @@ import history from '../history'
 const GET_ARTICLELIST = 'GET_ARTICLELIST'
 const REMOVE_ARTICLELIST = 'REMOVE_ARTICLELIST'
 const PUBLISH_ARTICLE = 'PUBLISH_ARTICLE'
+const GET_USER_ARTICLES = 'GET_USER_ARTICLES'
 
 /**
  * INITIAL STATE
@@ -51,6 +52,14 @@ export const adminPublishArticleThunk = (article, publish) => dispatch => {
           articleList = articleList.sort((a, b) => a.id - b.id)
           dispatch(getArticleList(articleList))
         })
+    })
+}
+
+export const getUserArticlesThunk = userId => dispatch => {
+  axios.get(`/api/articles/user/${userId}`)
+    .then(res => res.data)
+    .then(articleList => {
+      dispatch(getArticleList(articleList))
     })
 }
 

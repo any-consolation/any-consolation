@@ -62,6 +62,23 @@ router.get('/:title', async (req, res, next) => {
   }
 })
 
+router.get('/user/:userId', async (req, res, next) => {
+
+  try {
+
+    const articles = await Article.findAll({
+      where: { userId: req.params.userId },
+      include: ['user']
+    })
+
+    res.json(articles)
+
+  } catch (err) {
+    next(err)
+  }
+
+})
+
 
 // get all published articles (for home page):
 
