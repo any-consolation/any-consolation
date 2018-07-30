@@ -26,13 +26,28 @@ class UserHome extends Component {
         <h2>any-consolation User Portal</h2>
         <h3>Your email: {this.props.email}</h3>
         <div>
-          <h3>we need a table of our own articles here</h3>
-          {this.props.articleList && this.props.articleList.map(article => 
-          (<div key={article.id}>
-            <h3>{article.title}</h3>
-          </div>))}
+          <h3>Your Articles:</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Date Created</th>
+                <th>Published Anonymously?</th>
+                <th>Edit</th>
+              </tr>
+            </thead>
+            {this.props.user && this.props.articleList && this.props.articleList.map(article => (
+              <tr key={article.id}>
+                <td>{article.title}</td>
+                <td>{article.createdAt}</td>
+                <td>{article.isAnonymous ? 'True' : 'False'}</td>
+                <td><button>Edit</button></td>
+              </tr>))}
+          </table>
         </div>
+
         <div>
+          <br />
           <button>maybe a button to go to the new article input form</button>
         </div>
         <div>
